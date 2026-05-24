@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ladaku – Premium Indonesian Pepper for Japan</title>
+    <title>Ladaku – Premium Black & White Pepper for Japan</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,33 +16,66 @@
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #f9f9f6;
-            color: #1a2c1e;
+            font-family: 'Inter', sans-serif;
+            background: #FAFAF5;
+            color: #1A2C1E;
             line-height: 1.5;
+            scroll-behavior: smooth;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        .navbar {
-            background: #1f4d2e;
+        /* Language Switcher */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            z-index: 1000;
+            background: white;
+            border-radius: 40px;
+            padding: 6px 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 8px;
+        }
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.85rem;
+        }
+        .lang-btn.active {
+            background: #1F4D2E;
             color: white;
-            padding: 12px 0;
+        }
+        .lang-btn:not(.active):hover {
+            background: #E6E6E0;
+        }
+        /* Header */
+        .header {
+            background: #1F4D2E;
+            color: white;
+            padding: 16px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 99;
         }
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 16px;
         }
         .logo h2 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
         }
         .logo p {
             font-size: 0.7rem;
@@ -45,283 +83,401 @@
         }
         .nav-links {
             display: flex;
-            gap: 12px;
+            gap: 24px;
             align-items: center;
         }
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-weight: 500;
         }
-        .btn-contact {
-            background: #e6a017;
-            padding: 6px 12px;
-            border-radius: 30px;
-            color: #1f4d2e !important;
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .btn-contact-nav {
+            background: #E6A017;
+            padding: 8px 18px;
+            border-radius: 40px;
+            color: #1F4D2E !important;
             font-weight: bold;
         }
+        /* Hero */
         .hero {
-            padding: 40px 0;
-            background: linear-gradient(135deg, #eef5ea 0%, #d9e8d1 100%);
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, #EEF5EA 0%, #D9E8D1 100%);
         }
-        .hero-container {
+        .hero-grid {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
         }
         .hero-text h1 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-            color: #1f4d2e;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
-        .highlight {
-            color: #e6a017;
-            border-bottom: 2px solid #e6a017;
+        .hero-text .highlight {
+            color: #E6A017;
+            border-bottom: 3px solid #E6A017;
         }
         .hero-text p {
-            font-size: 1rem;
-            margin-bottom: 24px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #2C3E2B;
         }
         .hero-buttons {
             display: flex;
-            gap: 12px;
+            gap: 16px;
             flex-wrap: wrap;
         }
         .btn-primary, .btn-secondary {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 28px;
             border-radius: 40px;
             text-decoration: none;
-            font-weight: bold;
-            text-align: center;
+            font-weight: 600;
+            transition: 0.2s;
         }
         .btn-primary {
-            background: #e6a017;
-            color: #1f4d2e;
+            background: #E6A017;
+            color: #1F4D2E;
+        }
+        .btn-primary:hover {
+            background: #D48F00;
+            transform: translateY(-3px);
         }
         .btn-secondary {
+            border: 2px solid #1F4D2E;
+            color: #1F4D2E;
             background: transparent;
-            border: 2px solid #1f4d2e;
-            color: #1f4d2e;
+        }
+        .btn-secondary:hover {
+            background: #1F4D2E;
+            color: white;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
         }
         .hero-image img {
             max-width: 100%;
-            border-radius: 16px;
-            background: #ddd;
+            border-radius: 28px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            background: #EFF5EC;
         }
+        /* Section */
         section {
-            padding: 50px 0;
+            padding: 70px 0;
         }
         .section-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 30px;
-            color: #1f4d2e;
+            margin-bottom: 50px;
+            color: #1F4D2E;
             position: relative;
         }
-        .section-title::after {
+        .section-title:after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
-            background: #e6a017;
-            margin: 10px auto 0;
+            width: 70px;
+            height: 4px;
+            background: #E6A017;
+            margin: 12px auto 0;
+            border-radius: 2px;
         }
-        .spec-grid, .benefits-grid, .competitor-grid, .adapt-grid {
+        .grid-2, .grid-3, .grid-4 {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
         }
-        .spec-card, .benefit-card, .competitor-card, .adapt-card {
+        .card {
             background: white;
-            border-radius: 16px;
-            padding: 20px;
-            flex: 1 1 240px;
+            border-radius: 20px;
+            padding: 28px 20px;
+            flex: 1 1 260px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
-        .spec-card i, .benefit-card i, .adapt-card i {
-            font-size: 2rem;
-            color: #e6a017;
-            margin-bottom: 12px;
-            display: inline-block;
+        .card:hover {
+            transform: translateY(-8px);
+        }
+        .card i {
+            font-size: 2.5rem;
+            color: #E6A017;
+            margin-bottom: 20px;
         }
         .competitor-card {
-            background: #eef5ea;
+            background: #EEF5EA;
+            border-left: 5px solid #E6A017;
+            text-align: left;
         }
         .competitor-card h3 {
-            color: #1f4d2e;
-            margin-bottom: 10px;
+            color: #1F4D2E;
+            margin-bottom: 12px;
+        }
+        .spec-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .spec-row {
+            display: flex;
+            border-bottom: 1px solid #E0E0D5;
+            padding: 16px 20px;
+            flex-wrap: wrap;
+        }
+        .spec-label {
+            width: 140px;
+            font-weight: 700;
+            color: #1F4D2E;
+        }
+        .spec-value {
+            flex: 1;
+        }
+        .moq-list {
+            background: #FEF6E8;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .moq-list h3 {
+            margin-bottom: 20px;
+            color: #1F4D2E;
+        }
+        .moq-list ul {
+            list-style: none;
+        }
+        .moq-list li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+        }
+        .moq-list li:before {
+            content: "✓";
+            color: #E6A017;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
         .contact-section {
-            background: #1f4d2e;
+            background: #1F4D2E;
             color: white;
         }
-        .contact-container {
+        .contact-wrapper {
             background: white;
-            color: #1a2c1e;
-            border-radius: 20px;
+            color: #1A2C1E;
+            border-radius: 24px;
             overflow: hidden;
             display: flex;
             flex-wrap: wrap;
         }
-        .contact-info, .contact-form {
-            flex: 1;
-            padding: 24px;
-            min-width: 260px;
-        }
         .contact-info {
-            background: #eef5ea;
+            background: #EEF5EA;
+            padding: 40px;
+            flex: 1;
+        }
+        .contact-form {
+            padding: 40px;
+            flex: 1;
         }
         .contact-info i {
-            width: 28px;
-            color: #e6a017;
+            width: 32px;
+            color: #E6A017;
+        }
+        .contact-info p {
+            margin: 16px 0;
         }
         .contact-form input, .contact-form select, .contact-form textarea {
             width: 100%;
-            padding: 10px;
-            margin: 8px 0 16px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 12px;
+            margin: 8px 0 20px;
+            border: 1px solid #CCC;
+            border-radius: 12px;
+            font-family: inherit;
         }
         .contact-form button {
-            background: #e6a017;
-            color: #1f4d2e;
+            background: #E6A017;
+            color: #1F4D2E;
             border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
+            padding: 12px 28px;
+            border-radius: 40px;
             font-weight: bold;
             cursor: pointer;
         }
-        footer {
-            background: #2c2b28;
-            color: #aaa;
+        .product-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        .gallery-item {
+            width: 180px;
             text-align: center;
-            padding: 20px;
-            font-size: 0.75rem;
+            background: white;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        @media (min-width: 768px) {
-            .hero-container {
-                flex-direction: row;
-                align-items: center;
-            }
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 12px;
         }
+        footer {
+            background: #2C2B28;
+            color: #AAA;
+            text-align: center;
+            padding: 24px;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 1.9rem; }
+            .section-title { font-size: 1.6rem; }
+            .spec-row { flex-direction: column; gap: 6px; }
+            .lang-switch { top: 70px; right: 16px; }
+            .gallery-item { width: 140px; }
+        }
+        [data-lang] { transition: opacity 0.2s; }
+        .lang-id, .lang-en { display: none; }
+        .lang-id.active-lang, .lang-en.active-lang { display: inline; }
+        .block-id, .block-en { display: none; }
+        .block-id.active-lang, .block-en.active-lang { display: block; }
+        .flex-id, .flex-en { display: none; }
+        .flex-id.active-lang, .flex-en.active-lang { display: flex; }
     </style>
 </head>
 <body>
 
-<header class="navbar">
+<div class="lang-switch">
+    <button class="lang-btn active" data-lang="id">🇮🇩 Indonesia</button>
+    <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+</div>
+
+<header class="header">
     <div class="container nav-container">
         <div class="logo">
             <h2>Ladaku</h2>
-            <p>Premium Indonesian Pepper</p>
+            <p class="lang-id active-lang">Premium Lada Indonesia</p>
+            <p class="lang-en">Premium Indonesian Pepper</p>
         </div>
         <div class="nav-links">
-            <a href="#product">Produk</a>
-            <a href="#why">Keunggulan</a>
-            <a href="#contact" class="btn-contact">Kontak</a>
+            <a href="#product" class="lang-id active-lang">Produk</a>
+            <a href="#product" class="lang-en">Product</a>
+            <a href="#why" class="lang-id active-lang">Keunggulan</a>
+            <a href="#why" class="lang-en">Advantages</a>
+            <a href="#contact" class="btn-contact-nav lang-id active-lang">Kontak</a>
+            <a href="#contact" class="btn-contact-nav lang-en">Contact</a>
         </div>
     </div>
 </header>
 
 <section class="hero">
-    <div class="container hero-container">
+    <div class="container hero-grid">
         <div class="hero-text">
-            <h1>Premium Indonesian <span class="highlight">Black & White Pepper</span> for Japan</h1>
-            <p>Ladaku: lada bubuk praktis kemasan sachet higienis, bahan baku Indikasi Geografis (Lampung & Bangka Belitung), sertifikasi Halal, BPOM, ISO 22000. Tarif preferensi IJEPA 0%.</p>
+            <h1>
+                <span class="lang-id active-lang">Premium Lada Hitam & Putih Indonesia<br> untuk <span class="highlight">Pasar Jepang</span></span>
+                <span class="lang-en">Premium Indonesian <span class="highlight">Black & White Pepper</span><br> for the Japanese Market</span>
+            </h1>
+            <p class="lang-id active-lang">Ladaku: lada bubuk praktis dalam kemasan sachet higienis, bahan baku Indikasi Geografis (Lampung & Bangka Belitung), sertifikasi Halal, BPOM, ISO 22000. Tarif preferensi IJEPA 0%.</p>
+            <p class="lang-en">Ladaku: practical, hygienic sachet pepper powder from Geographical Indication regions (Lampung & Bangka Belitung). Certified Halal, BPOM, ISO 22000. Enjoy 0% IJEPA tariff.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Request Quotation →</a>
-                <a href="#why" class="btn-secondary">Pelajari</a>
+                <a href="#contact" class="btn-primary lang-id active-lang">Kirim Permintaan →</a>
+                <a href="#contact" class="btn-primary lang-en">Request Quotation →</a>
+                <a href="#why" class="btn-secondary lang-id active-lang">Pelajari Lebih</a>
+                <a href="#why" class="btn-secondary lang-en">Learn More</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="https://placehold.co/500x400/eef5ea/1f4d2e?text=Ladaku+Product" alt="Ladaku Product">
+            <!-- Ganti dengan foto produk unggulan -->
+            <img src="images/ladaku-black-white.jpg" alt="Ladaku Black & White Pepper" onerror="this.src='https://placehold.co/500x450/EEF5EA/1F4D2E?text=Ladaku+Premium+Pepper'">
         </div>
     </div>
 </section>
 
+<!-- Galeri Foto Produk -->
+<div class="container product-gallery" data-aos="fade-up">
+    <div class="gallery-item"><img src="images/ladaku-black-100g.jpg" alt="Ladaku Black Pepper 100g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=Black+100g'"><p>Black Pepper 100g</p></div>
+    <div class="gallery-item"><img src="images/ladaku-white-100g.jpg" alt="Ladaku White Pepper 100g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=White+100g'"><p>White Pepper 100g</p></div>
+    <div class="gallery-item"><img src="images/ladaku-black-250g.jpg" alt="Ladaku Black Pepper 250g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=Black+250g'"><p>Black Pepper 250g</p></div>
+    <div class="gallery-item"><img src="images/ladaku-white-250g.jpg" alt="Ladaku White Pepper 250g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=White+250g'"><p>White Pepper 250g</p></div>
+    <div class="gallery-item"><img src="images/ladaku-sachet.jpg" alt="Ladaku Sachet" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=Sachet'"><p>Sachet 4g/24g</p></div>
+</div>
+
+<!-- Spesifikasi Produk -->
 <section id="product">
     <div class="container">
-        <h2 class="section-title">📦 Spesifikasi Produk</h2>
-        <div class="spec-grid">
-            <div class="spec-card"><div style="font-size:2rem;">📦</div><h3>Varian</h3><p>Sachet 4g/24g, Botol 35g, Pouch 100g/250g, Bag 25kg</p></div>
-            <div class="spec-card"><div style="font-size:2rem;">🔢</div><h3>HS Code</h3><p>090412</p></div>
-            <div class="spec-card"><div style="font-size:2rem;">⏱️</div><h3>Lead time</h3><p>30–45 hari</p></div>
-            <div class="spec-card"><div style="font-size:2rem;">✅</div><h3>Sertifikasi</h3><p>Halal MUI, BPOM, ISO 22000</p></div>
+        <h2 class="section-title lang-id active-lang">📦 Spesifikasi Produk</h2>
+        <h2 class="section-title lang-en">📦 Product Specifications</h2>
+        <div class="spec-table">
+            <div class="spec-row"><div class="spec-label lang-id active-lang">Nama Produk</div><div class="spec-value">Ladaku (Black Pepper Ground & White Pepper Ground)</div>
+            <div class="spec-label lang-en">Product Name</div><div class="spec-value">Ladaku (Black Pepper Ground & White Pepper Ground)</div></div>
+            <div class="spec-row"><div class="spec-label">HS Code</div><div class="spec-value">090412</div></div>
+            <div class="spec-row"><div class="spec-label lang-id active-lang">Varian</div><div class="spec-value">Sachet 4g, 24g; Botol 35g; Pouch 100g, 250g; Bag 25kg</div>
+            <div class="spec-label lang-en">Variants</div><div class="spec-value">Sachet 4g, 24g; Bottle 35g; Pouch 100g, 250g; Bag 25kg</div></div>
+            <div class="spec-row"><div class="spec-label">Lead Time</div><div class="spec-value">30–45 hari</div></div>
+            <div class="spec-row"><div class="spec-label lang-id active-lang">Sertifikasi</div><div class="spec-value">Halal MUI, BPOM, ISO 22000:2018, ISO 14001, OHSAS 18001</div>
+            <div class="spec-label lang-en">Certifications</div><div class="spec-value">Halal MUI, BPOM, ISO 22000:2018, ISO 14001, OHSAS 18001</div></div>
+        </div>
+        <div class="moq-list">
+            <h3 class="lang-id active-lang">📦 Minimum Order Quantity (MOQ)</h3>
+            <h3 class="lang-en">📦 Minimum Order Quantity (MOQ)</h3>
+            <ul class="lang-id active-lang">
+                <li><strong>Sachet 4g & 24g:</strong> 1 karton per varian (1.000 sachet 4g / 500 sachet 24g). Sample order 100 pcs tersedia.</li>
+                <li><strong>Botol 35g:</strong> 500 botol. Sample order 100 botol tersedia.</li>
+                <li><strong>Pouch 100g:</strong> 500 pouch; <strong>Pouch 250g:</strong> 300 pouch. Sample order 100 pouch tersedia.</li>
+                <li><strong>Bag 25 kg (industrial):</strong> 1 kontainer (20 ton). Trial order hingga 100 bag (2,5 ton) tersedia.</li>
+                <li><em>Semua MOQ dapat didiskusikan. Hubungi tim ekspor kami.</em></li>
+            </ul>
+            <ul class="lang-en">
+                <li><strong>Sachet 4g & 24g:</strong> 1 carton per variant (1,000 sachet 4g / 500 sachet 24g). Sample order 100 pcs available.</li>
+                <li><strong>Bottle 35g:</strong> 500 bottles. Sample order 100 bottles available.</li>
+                <li><strong>Pouch 100g:</strong> 500 pouch; <strong>Pouch 250g:</strong> 300 pouch. Sample order 100 pouch available.</li>
+                <li><strong>Bag 25kg (industrial):</strong> 1 FCL container (20 tons). Trial order up to 100 bags (2.5 tons) available.</li>
+                <li><em>All MOQ terms are flexible – contact our export team.</em></li>
+            </ul>
         </div>
     </div>
 </section>
 
-<section id="why" style="background:#fef6e8;">
+<!-- Value Proposition -->
+<section id="why" style="background:#FEF6E8;">
     <div class="container">
-        <h2 class="section-title">🌿 Why Choose Ladaku?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card"><div style="font-size:2rem;">🌱</div><h3>Premium Bahan Baku</h3><p>Lada hitam Lampung & lada putih Muntok (Indikasi Geografis).</p></div>
-            <div class="benefit-card"><div style="font-size:2rem;">📦</div><h3>Kemasan Sachet</h3><p>Anti-tumpah, higienis, siap pakai — unik di Jepang.</p></div>
-            <div class="benefit-card"><div style="font-size:2rem;">💰</div><h3>Tarif 0% IJEPA</h3><p>Keunggulan harga dibanding pesaing (Vietnam, Malaysia, India).</p></div>
+        <h2 class="section-title lang-id active-lang">🌿 Mengapa Memilih Ladaku?</h2>
+        <h2 class="section-title lang-en">🌿 Why Choose Ladaku?</h2>
+        <div class="grid-3">
+            <div class="card"><i class="fas fa-leaf"></i><h3 class="lang-id active-lang">Bahan Baku Premium IG</h3><h3 class="lang-en">Premium GI Raw Materials</h3><p class="lang-id active-lang">Lada hitam Lampung (piperin tinggi) & lada putih Muntok (Indikasi Geografis).</p><p class="lang-en">Lampung black pepper (high piperine) & Muntok white pepper (Geographical Indication).</p></div>
+            <div class="card"><i class="fas fa-box-open"></i><h3 class="lang-id active-lang">Kemasan Sachet Praktis</h3><h3 class="lang-en">Practical Sachet Packaging</h3><p class="lang-id active-lang">Anti-tumpah, higienis, siap pakai — berbeda dari kompetitor botol besar.</p><p class="lang-en">Anti-spill, hygienic, ready-to-use — unique vs big bottle competitors.</p></div>
+            <div class="card"><i class="fas fa-file-invoice-dollar"></i><h3 class="lang-id active-lang">Tarif 0% IJEPA</h3><h3 class="lang-en">0% Tariff under IJEPA</h3><p class="lang-id active-lang">Keunggulan harga dibanding Vietnam, Malaysia, India.</p><p class="lang-en">Price advantage vs Vietnam, Malaysia, India.</p></div>
         </div>
     </div>
 </section>
 
+<!-- Kompetitor -->
 <section>
     <div class="container">
-        <h2 class="section-title">🏆 Keunggulan vs Kompetitor</h2>
-        <div class="competitor-grid">
-            <div class="competitor-card"><h3>🇻🇳 Vietnam (45.3%)</h3><p>Volume & harga murah, tapi Ladaku unggul kualitas IG + sertifikasi lengkap.</p></div>
-            <div class="competitor-card"><h3>🇲🇾 Malaysia (20.2%)</h3><p>Brand kuat, tapi Ladaku unggul kemasan sachet & variasi lengkap.</p></div>
-            <div class="competitor-card"><h3>🇮🇳 India (<1%)</h3><p>Heritage premium, tapi Ladaku unggul lada putih IG Muntok & tarif 0%.</p></div>
-            <div class="competitor-card"><h3>🇯🇵 Lokal Jepang (S&B, Gaban)</h3><p>Loyalitas tinggi, tapi Ladaku unggul kemasan sachet & harga kompetitif.</p></div>
+        <h2 class="section-title lang-id active-lang">🏆 Keunggulan Ladaku vs Kompetitor</h2>
+        <h2 class="section-title lang-en">🏆 Ladaku's Advantages vs Competitors</h2>
+        <div class="grid-4">
+            <div class="card competitor-card"><h3>🇻🇳 Vietnam</h3><p class="lang-id active-lang">Unggul volume & harga murah, tapi Ladaku unggul kualitas IG & sertifikasi lengkap.</p><p class="lang-en">Volume & cheap price, but Ladaku wins on GI quality & full certifications.</p></div>
+            <div class="card competitor-card"><h3>🇲🇾 Malaysia</h3><p class="lang-id active-lang">Brand kuat, tapi Ladaku unggul kemasan sachet & variasi produk lengkap.</p><p class="lang-en">Strong brand, but Ladaku offers sachet packaging & wider product range.</p></div>
+            <div class="card competitor-card"><h3>🇮🇳 India</h3><p class="lang-id active-lang">Heritage premium, tapi Ladaku unggul lada putih IG Muntok & tarif 0%.</p><p class="lang-en">Premium heritage, but Ladaku has Muntok white pepper GI & 0% tariff.</p></div>
+            <div class="card competitor-card"><h3>🇯🇵 Lokal Jepang</h3><p class="lang-id active-lang">Loyalitas tinggi, tapi Ladaku unggul kemasan sachet & harga kompetitif.</p><p class="lang-en">High loyalty, but Ladaku offers sachet convenience & better price.</p></div>
         </div>
     </div>
 </section>
 
-<section style="background:#eef5ea;">
+<!-- Market Fit & Adaptasi -->
+<section style="background:#EEF5EA;">
     <div class="container">
-        <h2 class="section-title">🎯 Market Fit & Adaptasi</h2>
-        <div class="adapt-grid">
-            <div class="adapt-card"><div style="font-size:2rem;">🎯</div><h3>Target Market</h3><p><strong>Primary:</strong> Importir & distributor Jepang<br><strong>Secondary:</strong> Ritel, HORECA, industri makanan</p></div>
-            <div class="adapt-card"><div style="font-size:2rem;">🛠️</div><h3>Adaptasi Produk</h3><p>Label Jepang (Food Sanitation Act), desain minimalis, info nutrisi & alergen.</p></div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2 class="section-title" style="color: white;">📞 Get in Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <p>📧 <strong>export@motasaindonesia.com</strong></p>
-                <p>📞 <strong>+62 321 371 5508</strong> (Factory)</p>
-                <p>🌐 <strong>www.ladaku.com</strong></p>
-                <p>🚢 <strong>Incoterms:</strong> FOB Surabaya, Indonesia</p>
-            </div>
-            <div class="contact-form">
-                <h3>Kirim Inquiry</h3>
-                <form>
-                    <input type="text" placeholder="Nama / Perusahaan" required>
-                    <input type="email" placeholder="Email" required>
-                    <select>
-                        <option>Minat: Sachet 4g/24g</option>
-                        <option>Minat: Botol 35g</option>
-                        <option>Minat: Pouch</option>
-                        <option>Minat: Bag 25kg</option>
-                    </select>
-                    <textarea rows="3" placeholder="Pesan / Request price"></textarea>
-                    <button type="submit">Kirim Inquiry →</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>PT Motasa Indonesia – Ladaku Brand | Export sales: export@motasaindonesia.com</p>
-    <p>🌏 From Indonesia’s spice islands to your kitchen in Japan</p>
-</footer>
-
-</body>
-</html>
+        <h2 class="section-title lang-id active-lang">🎯 Market Fit & Adaptasi untuk Jepang</h2>
+        <h2 class="section-title lang-en">🎯 Market Fit & Adaptation for Japan</h2>
+        <div class="grid-2">
+            <div class="card"><i class="fas fa-bullseye"></i><h3 class="lang-id active-lang">Target Market</h3><h3 class="lang-en">Target Market</h3><p class="lang-id active-lang"><strong>Primary:</strong> Importir & distributor Jepang<br><
