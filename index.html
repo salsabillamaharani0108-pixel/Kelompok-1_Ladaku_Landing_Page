@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ladaku – Premium Black & White Pepper for Japan</title>
-    <!-- Google Fonts & Font Awesome -->
+    <title>Ladaku – Premium Pepper for Japan</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -85,6 +86,7 @@
             display: flex;
             gap: 24px;
             align-items: center;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: white;
@@ -226,6 +228,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
         .spec-row {
             display: flex;
@@ -316,7 +319,8 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            margin: 40px 0;
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
         .gallery-item {
             width: 180px;
@@ -345,13 +349,28 @@
             .lang-switch { top: 70px; right: 16px; }
             .gallery-item { width: 140px; }
         }
-        [data-lang] { transition: opacity 0.2s; }
-        .lang-id, .lang-en { display: none; }
-        .lang-id.active-lang, .lang-en.active-lang { display: inline; }
-        .block-id, .block-en { display: none; }
-        .block-id.active-lang, .block-en.active-lang { display: block; }
-        .flex-id, .flex-en { display: none; }
-        .flex-id.active-lang, .flex-en.active-lang { display: flex; }
+        /* Language handling */
+        .lang-id, .lang-en {
+            display: none;
+        }
+        .lang-id.active-lang, .lang-en.active-lang {
+            display: inline;
+        }
+        .block-id, .block-en {
+            display: none;
+        }
+        .block-id.active-lang, .block-en.active-lang {
+            display: block;
+        }
+        .flex-id, .flex-en {
+            display: none;
+        }
+        .flex-id.active-lang, .flex-en.active-lang {
+            display: flex;
+        }
+        table, tr, td, th {
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -396,19 +415,18 @@
             </div>
         </div>
         <div class="hero-image">
-            <!-- Ganti dengan foto produk unggulan -->
-            <img src="images/ladaku-black-white.jpg" alt="Ladaku Black & White Pepper" onerror="this.src='https://placehold.co/500x450/EEF5EA/1F4D2E?text=Ladaku+Premium+Pepper'">
+            <img src="https://placehold.co/500x450/EEF5EA/1F4D2E?text=Ladaku+Premium+Pepper" alt="Ladaku Product">
         </div>
     </div>
 </section>
 
 <!-- Galeri Foto Produk -->
 <div class="container product-gallery" data-aos="fade-up">
-    <div class="gallery-item"><img src="images/ladaku-black-100g.jpg" alt="Ladaku Black Pepper 100g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=Black+100g'"><p>Black Pepper 100g</p></div>
-    <div class="gallery-item"><img src="images/ladaku-white-100g.jpg" alt="Ladaku White Pepper 100g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=White+100g'"><p>White Pepper 100g</p></div>
-    <div class="gallery-item"><img src="images/ladaku-black-250g.jpg" alt="Ladaku Black Pepper 250g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=Black+250g'"><p>Black Pepper 250g</p></div>
-    <div class="gallery-item"><img src="images/ladaku-white-250g.jpg" alt="Ladaku White Pepper 250g" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=White+250g'"><p>White Pepper 250g</p></div>
-    <div class="gallery-item"><img src="images/ladaku-sachet.jpg" alt="Ladaku Sachet" onerror="this.src='https://placehold.co/180x180/EEE/1F4D2E?text=Sachet'"><p>Sachet 4g/24g</p></div>
+    <div class="gallery-item"><img src="https://placehold.co/180x180/EEE/1F4D2E?text=Black+100g" alt="Black Pepper 100g"><p class="lang-id active-lang">Lada Hitam 100g</p><p class="lang-en">Black Pepper 100g</p></div>
+    <div class="gallery-item"><img src="https://placehold.co/180x180/EEE/1F4D2E?text=White+100g" alt="White Pepper 100g"><p class="lang-id active-lang">Lada Putih 100g</p><p class="lang-en">White Pepper 100g</p></div>
+    <div class="gallery-item"><img src="https://placehold.co/180x180/EEE/1F4D2E?text=Black+250g" alt="Black Pepper 250g"><p class="lang-id active-lang">Lada Hitam 250g</p><p class="lang-en">Black Pepper 250g</p></div>
+    <div class="gallery-item"><img src="https://placehold.co/180x180/EEE/1F4D2E?text=White+250g" alt="White Pepper 250g"><p class="lang-id active-lang">Lada Putih 250g</p><p class="lang-en">White Pepper 250g</p></div>
+    <div class="gallery-item"><img src="https://placehold.co/180x180/EEE/1F4D2E?text=Sachet" alt="Sachet"><p class="lang-id active-lang">Sachet 4g/24g</p><p class="lang-en">Sachet 4g/24g</p></div>
 </div>
 
 <!-- Spesifikasi Produk -->
@@ -417,14 +435,15 @@
         <h2 class="section-title lang-id active-lang">📦 Spesifikasi Produk</h2>
         <h2 class="section-title lang-en">📦 Product Specifications</h2>
         <div class="spec-table">
-            <div class="spec-row"><div class="spec-label lang-id active-lang">Nama Produk</div><div class="spec-value">Ladaku (Black Pepper Ground & White Pepper Ground)</div>
-            <div class="spec-label lang-en">Product Name</div><div class="spec-value">Ladaku (Black Pepper Ground & White Pepper Ground)</div></div>
+            <div class="spec-row"><div class="spec-label lang-id active-lang">Nama Produk</div><div class="spec-value">Ladaku (Lada Hitam Bubuk & Lada Putih Bubuk)</div></div>
+            <div class="spec-row"><div class="spec-label lang-en">Product Name</div><div class="spec-value">Ladaku (Black Pepper Ground & White Pepper Ground)</div></div>
             <div class="spec-row"><div class="spec-label">HS Code</div><div class="spec-value">090412</div></div>
-            <div class="spec-row"><div class="spec-label lang-id active-lang">Varian</div><div class="spec-value">Sachet 4g, 24g; Botol 35g; Pouch 100g, 250g; Bag 25kg</div>
-            <div class="spec-label lang-en">Variants</div><div class="spec-value">Sachet 4g, 24g; Bottle 35g; Pouch 100g, 250g; Bag 25kg</div></div>
-            <div class="spec-row"><div class="spec-label">Lead Time</div><div class="spec-value">30–45 hari</div></div>
-            <div class="spec-row"><div class="spec-label lang-id active-lang">Sertifikasi</div><div class="spec-value">Halal MUI, BPOM, ISO 22000:2018, ISO 14001, OHSAS 18001</div>
-            <div class="spec-label lang-en">Certifications</div><div class="spec-value">Halal MUI, BPOM, ISO 22000:2018, ISO 14001, OHSAS 18001</div></div>
+            <div class="spec-row"><div class="spec-label lang-id active-lang">Varian</div><div class="spec-value">Sachet 4g, 24g; Botol 35g; Pouch 100g, 250g; Bag 25kg</div></div>
+            <div class="spec-row"><div class="spec-label lang-en">Variants</div><div class="spec-value">Sachet 4g, 24g; Bottle 35g; Pouch 100g, 250g; Bag 25kg</div></div>
+            <div class="spec-row"><div class="spec-label lang-id active-lang">Waktu Pengiriman</div><div class="spec-value">30–45 hari</div></div>
+            <div class="spec-row"><div class="spec-label lang-en">Lead Time</div><div class="spec-value">30–45 days</div></div>
+            <div class="spec-row"><div class="spec-label lang-id active-lang">Sertifikasi</div><div class="spec-value">Halal MUI, BPOM, ISO 22000:2018, ISO 14001, OHSAS 18001</div></div>
+            <div class="spec-row"><div class="spec-label lang-en">Certifications</div><div class="spec-value">Halal MUI, BPOM, ISO 22000:2018, ISO 14001, OHSAS 18001</div></div>
         </div>
         <div class="moq-list">
             <h3 class="lang-id active-lang">📦 Minimum Order Quantity (MOQ)</h3>
@@ -477,7 +496,4 @@
 <!-- Market Fit & Adaptasi -->
 <section style="background:#EEF5EA;">
     <div class="container">
-        <h2 class="section-title lang-id active-lang">🎯 Market Fit & Adaptasi untuk Jepang</h2>
-        <h2 class="section-title lang-en">🎯 Market Fit & Adaptation for Japan</h2>
-        <div class="grid-2">
-            <div class="card"><i class="fas fa-bullseye"></i><h3 class="lang-id active-lang">Target Market</h3><h3 class="lang-en">Target Market</h3><p class="lang-id active-lang"><strong>Primary:</strong> Importir & distributor Jepang<br><
+        <h2 class="section-
