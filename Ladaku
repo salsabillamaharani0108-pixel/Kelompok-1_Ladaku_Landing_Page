@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladaku – Premium Indonesian Pepper for Japan</title>
+    <!-- CSS External -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome (untuk ikon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Library (untuk animasi scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h2>Ladaku</h2>
+                <p>Premium Indonesian Pepper</p>
+            </div>
+            <div class="nav-links">
+                <a href="#produk">Produk</a>
+                <a href="#keunggulan">Keunggulan</a>
+                <a href="#kontak" class="btn-contact">Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-text" data-aos="fade-up">
+                <h1>Premium Indonesian <span class="highlight">Black & White Pepper</span> for the Japanese Market</h1>
+                <p>Ladaku menawarkan lada hitam & putih bubuk dengan kemasan sachet praktis dan higienis, bahan baku dari daerah Indikasi Geografis (Lampung & Bangka Belitung), serta sertifikasi Halal, BPOM, ISO 22000. Tarif preferensi IJEPA 0%.</p>
+                <div class="hero-buttons">
+                    <a href="#kontak" class="btn-primary">Request Quotation →</a>
+                    <a href="#keunggulan" class="btn-secondary">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="images/ladaku-product.png" alt="Ladaku Product" onerror="this.src='https://placehold.co/500x400?text=Ladaku+Product'">
+                <!-- Ganti 'images/ladaku-product.png' dengan path gambar produk Ladaku yang kamu punya -->
+                <!-- Kalau belum ada gambarnya, sementara pakai placeholder biar nampak strukturnya -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUK SPESIFIKASI -->
+    <section id="produk" class="spec-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">📦 Spesifikasi Produk</h2>
+            <div class="spec-card" data-aos="fade-up">
+                <div class="spec-item">
+                    <i class="fas fa-box"></i>
+                    <h3>Varian & Packaging</h3>
+                    <p>Sachet 4g & 24g, Botol 35g, Pouch 100g & 250g, Bag 25kg (Industrial)</p>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-barcode"></i>
+                    <h3>HS Code</h3>
+                    <p>090412</p>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Lead Time</h3>
+                    <p>30–45 hari</p>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Sertifikasi</h3>
+                    <p>Halal MUI, BPOM, ISO 22000:2018</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN PRODUK (VALUE PROPOSITION) -->
+    <section class="benefits-section" id="keunggulan">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">🌿 Why Choose Ladaku?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Premium Raw Materials</h3>
+                    <p>Lada hitam Lampung (piperin tinggi, aroma kuat) & lada putih Muntok Bangka Belitung (Indikasi Geografis).</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Practical Sachet Packaging</h3>
+                    <p>Kemasan sachet anti-tumpah, higienis, dan praktis — pembeda utama dari kompetitor botol besar.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>0% Tariff IJEPA</h3>
+                    <p>Keunggulan tarif preferensial 0% melalui Indonesia-Japan EPA (diperbarui 2024).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN VS KOMPETITOR (Versi Ringkas tapi Mantap) -->
+    <section class="competitor-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">🏆 Keunggulan Ladaku vs Kompetitor</h2>
+            <div class="competitor-grid">
+                <div class="competitor-card" data-aos="flip-left">
+                    <h3>🇻🇳 Vietnam (45.3%)</h3>
+                    <p>Unggul volume & harga murah, tapi Ladaku unggul kualitas IG + sertifikasi lengkap.</p>
+                </div>
+                <div class="competitor-card" data-aos="flip-left" data-aos-delay="100">
+                    <h3>🇲🇾 Malaysia (20.2%)</h3>
+                    <p>Brand recognition kuat, tapi Ladaku unggul kemasan sachet & variasi produk lengkap.</p>
+                </div>
+                <div class="competitor-card" data-aos="flip-left" data-aos-delay="200">
+                    <h3>🇮🇳 India (<1%)</h3>
+                    <p>Heritage premium, tapi Ladaku unggul lada putih IG Muntok & tarif 0% IJEPA.</p>
+                </div>
+                <div class="competitor-card" data-aos="flip-left" data-aos-delay="300">
+                    <h3>🇯🇵 Lokal Jepang (S&B, Gaban)</h3>
+                    <p>Loyalitas tinggi, tapi Ladaku unggul kemasan sachet & harga lebih kompetitif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARKET FIT & ADAPTASI -->
+    <section class="adapt-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">🎯 Market Fit & Adaptasi untuk Jepang</h2>
+            <div class="adapt-grid">
+                <div class="adapt-card" data-aos="fade-right">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Target Market</h3>
+                    <p><strong>Primary Buyer:</strong> Importir & distributor makanan Jepang<br>
+                    <strong>Secondary Buyer:</strong> Ritel (Aeon, 7-Eleven, Lawson), HORECA, industri makanan</p>
+                </div>
+                <div class="adapt-card" data-aos="fade-left">
+                    <i class="fas fa-language"></i>
+                    <h3>Adaptasi Produk</h3>
+                    <p>✓ Label bahasa Jepang (sesuai Food Sanitation Act)<br>
+                    ✓ Desain kemasan minimalis & informatif<br>
+                    ✓ Informasi nutrisi & alergen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & INQUIRY FORM -->
+    <section id="kontak" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;" data-aos="fade-up">📞 Get in Touch</h2>
+            <div class="contact-container" data-aos="fade-up">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> <strong>export@motasaindonesia.com</strong></p>
+                    <p><i class="fab fa-whatsapp"></i> <strong>+62 321 371 5508</strong> (Factory – Mojokerto)</p>
+                    <p><i class="fas fa-globe"></i> <strong>www.ladaku.com</strong> | <strong>www.motasaindonesia.com</strong></p>
+                    <p><i class="fas fa-shipping-fast"></i> <strong>Incoterms:</strong> FOB Surabaya, Indonesia</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Kirim Inquiry</h3>
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Nama / Perusahaan" required>
+                        <input type="email" placeholder="Email" required>
+                        <select>
+                            <option>Minat: Sachet 4g/24g</option>
+                            <option>Minat: Botol 35g</option>
+                            <option>Minat: Pouch 100g/250g</option>
+                            <option>Minat: Bag 25kg (Industrial)</option>
+                        </select>
+                        <textarea rows="3" placeholder="Pesan / Request price or catalogue"></textarea>
+                        <button type="submit">Kirim Inquiry →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>PT Motasa Indonesia – Ladaku Brand | Export sales: export@motasaindonesia.com</p>
+        <p>🌏 From Indonesia's spice islands to your kitchen in Japan</p>
+    </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Inisialisasi AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+    </script>
+</body>
+</html>
