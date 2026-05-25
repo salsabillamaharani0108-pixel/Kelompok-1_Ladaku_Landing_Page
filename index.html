@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladaku Japan - Premium Indonesian Pepper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- DESIGN SYSTEM & VARIABLES --- */
+        :root {
+            --hijau-tua: #1F4D2E;
+            --emas: #E6A017;
+            --krem-latar: #FDFBF7;
+            --krem-tua: #F4EFE6;
+            --teks-gelap: #2C3E2F;
+            --putih: #FFFFFF;
+            --transisi: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--krem-latar);
+            color: var(--teks-gelap);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- IJEPA BANNER STRIP --- */
+        .ijepa-strip {
+            background-color: var(--emas);
+            color: var(--hijau-tua);
+            font-weight: 700;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--putih);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--hijau-tua);
+            letter-spacing: 1px;
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--emas);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--teks-gelap);
+            font-weight: 600;
+            transition: var(--transisi);
+        }
+
+        .nav-menu a:hover {
+            color: var(--emas);
+        }
+
+        .lang-switcher {
+            background-color: var(--hijau-tua);
+            color: var(--putih);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transisi);
+        }
+
+        .lang-switcher:hover {
+            background-color: var(--emas);
+            color: var(--hijau-tua);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(253,251,247,0.85), rgba(253,251,247,0.85)), url('1000120724.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-banner-img {
+            max-width: 100%;
+            width: 900px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: var(--hijau-tua);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--teks-gelap);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transisi);
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--hijau-tua);
+            color: var(--putih);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--emas);
+            color: var(--hijau-tua);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--krem-tua);
+            color: var(--hijau-tua);
+            border: 1px solid var(--hijau-tua);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--hijau-tua);
+            color: var(--putih);
+        }
+
+        /* --- KEY STATS AREA --- */
+        .stats-grid {
+            max-width: 1100px;
+            margin: -30px auto 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-box {
+            background-color: var(--putih);
+            border-bottom: 4px solid var(--emas);
+            padding: 20px 15px;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-num {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--hijau-tua);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- GENERAL SECTION STRUCTURE --- */
+        section {
+            padding: 70px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--hijau-tua);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--emas);
+            margin: 10px auto 0 auto;
+        }
+
+        /* --- VALUE PROPOSITION --- */
+        .vp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .vp-card {
+            background-color: var(--putih);
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--hijau-tua);
+            transition: var(--transisi);
+        }
+
+        .vp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .vp-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--emas);
+            margin-bottom: 10px;
+        }
+
+        .vp-card h3 {
+            color: var(--hijau-tua);
+            margin-bottom: 15px;
+        }
+
+        /* --- USE CASES --- */
+        .use-case-box {
+            background-color: var(--krem-tua);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .variant-block {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .variant-card {
+            background: var(--putih);
+            padding: 25px;
+            border-radius: 6px;
+            border-top: 4px solid var(--teks-gelap);
+        }
+
+        .variant-card.black { border-top-color: #000; }
+        .variant-card.white { border-top-color: #ccc; }
+
+        .variant-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- INTERACTIVE PRODUCT SHOWCASE --- */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background-color: var(--krem-tua);
+            border: none;
+            font-weight: 700;
+            color: var(--hijau-tua);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: var(--transisi);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--hijau-tua);
+            color: var(--putih);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--putih);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: center;
+            padding: 20px;
+            transition: var(--transisi);
+            border: 1px solid var(--krem-tua);
+        }
+
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-card h4 {
+            color: var(--hijau-tua);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .product-card p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* --- SPECIFICATIONS TABLE --- */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--putih);
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--krem-tua);
+        }
+
+        th {
+            background-color: var(--hijau-tua);
+            color: var(--putih);
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--krem-latar);
+        }
+
+        /* --- TRUST CERTIFICATIONS AREA --- */
+        .cert-section {
+            background-color: var(--krem-tua);
+            text-align: center;
+        }
+
+        .cert-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .cert-item {
+            background: var(--putih);
+            padding: 20px;
+            border-radius: 6px;
+            width: 220px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .cert-icon-placeholder {
+            font-size: 2.5rem;
+            color: var(--emas);
+            margin-bottom: 10px;
+        }
+
+        /* --- TRACK RECORD --- */
+        .track-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media(max-width: 768px) {
+            .track-grid { grid-template-columns: 1fr; }
+        }
+
+        .track-box {
+            background: var(--putih);
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .flags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .flag-tag {
+            background: var(--krem-tua);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        /* --- CONTACT & INQUIRY FORM --- */
+        .contact-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media(max-width: 768px) {
+            .contact-area { grid-template-columns: 1fr; }
+        }
+
+        .contact-info i {
+            color: var(--emas);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .contact-info li {
+            list-style: none;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        form {
+            background: var(--putih);
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: var(--krem-latar);
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--hijau-tua);
+            color: var(--putih);
+            border: none;
+            padding: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: var(--transisi);
+        }
+
+        .form-submit:hover {
+            background: var(--emas);
+            color: var(--hijau-tua);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--hijau-tua);
+            color: var(--putih);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 5px solid var(--emas);
+        }
+
+        /* --- MULTILANGUAGE DISPLAY CONTROL --- */
+        .lang-en { display: none; }
+        body.en-active .lang-id { display: none; }
+        body.en-active .lang-en { display: inline; }
+        body.en-active blockview.lang-en { display: block; }
+        body.en-active table.lang-en { display: table; }
+        body.en-active div.lang-en { display: block; }
+        body.en-active div.product-grid.lang-en { display: grid; }
+    </style>
+</head>
+<body>
+
+    <!-- IJEPA STRIP -->
+    <div class="ijepa-strip">
+        <span class="lang-id">🇮🇩 🤝 🇯🇵 Tarif Bea Masuk 0% — Indonesia–Japan Economic Partnership Agreement (IJEPA 2024) · HS Code 090412</span>
+        <span class="lang-en">🇮🇩 🤝 🇯🇵 0% Import Tariff — Indonesia–Japan Economic Partnership Agreement (IJEPA 2024) · HS Code 090412</span>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <span class="logo-title">LADAKU</span>
+                <span class="logo-sub lang-id">Premium Lada Indonesia</span>
+                <span class="logo-sub lang-en">Premium Indonesian Pepper</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#produk"><span class="lang-id">Produk</span><span class="lang-en">Product</span></a></li>
+                <li><a href="#keunggulan"><span class="lang-id">Keunggulan</span><span class="lang-en">Advantages</span></a></li>
+                <li><a href="#pasar"><span class="lang-id">Target Pasar</span><span class="lang-en">Target Market</span></a></li>
+                <li><a href="#kontak"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a></li>
+            </ul>
+            <button class="lang-switcher" onclick="toggleLanguage()">🇮🇩 ID / 🇬🇧 EN</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="1000120724.jpg" alt="Ladaku Product Banner" class="hero-banner-img">
+            <h1 class="lang-id">Premium Lada Hitam & Putih Indonesia untuk Pasar Jepang</h1>
+            <h1 class="lang-en">Premium Indonesian Black & White Pepper for the Japanese Market</h1>
+            <p class="lang-id">Ladaku: lada bubuk praktis dalam kemasan sachet higienis, bahan baku Indikasi Geografis (Lampung & Bangka Belitung), bersertifikasi Halal MUI, BPOM & ISO 22000:2018. Solusi terbaik untuk importir, HORECA, dan industri makanan Jepang — dengan keunggulan tarif IJEPA 0%.</p>
+            <p class="lang-en">Ladaku: practical, hygienic sachet pepper powder from Geographical Indication regions (Lampung & Bangka Belitung). Certified Halal MUI, BPOM & ISO 22000:2018. The ideal solution for Japanese importers, HORECA, and food manufacturers — with 0% IJEPA preferential tariff advantage.</p>
+            <a href="#kontak" class="btn btn-primary"><span class="lang-id">Kirim Permintaan →</span><span class="lang-en">Request Quotation →</span></a>
+            <a href="#produk" class="btn btn-secondary"><span class="lang-id">Pelajari Lebih Lanjut</span><span class="lang-en">Learn More</span></a>
+        </div>
+    </section>
+
+    <!-- KEY STATS -->
+    <div class="stats-grid">
+        <div class="stat-box"><div class="stat-num">USD 49,9M</div><div class="stat-label"><span class="lang-id">Total Impor Jepang (2025)</span><span class="lang-en">Japan Total Import (2025)</span></div></div>
+        <div class="stat-box"><div class="stat-num">33,5%</div><div class="stat-label"><span class="lang-id">Pangsa Pasar Indonesia</span><span class="lang-en">Indonesia Market Share</span></div></div>
+        <div class="stat-box"><div class="stat-num">+14%</div><div class="stat-label"><span class="lang-id">Pertumbuhan Pasar</span><span class="lang-en">Market Growth</span></div></div>
+        <div class="stat-box"><div class="stat-num">0%</div><div class="stat-label"><span class="lang-id">Bea Masuk via IJEPA</span><span class="lang-en">Tarif Duty via IJEPA</span></div></div>
+        <div class="stat-box"><div class="stat-num">8+</div><div class="stat-label"><span class="lang-id">Negara Ekspor</span><span class="lang-en">Export Countries</span></div></div>
+        <div class="stat-box"><div class="stat-num">24 Bln</div><div class="stat-label"><span class="lang-id">Masa Simpan</span><span class="lang-en">Shelf Life Months</span></div></div>
+    </div>
+
+    <!-- VALUE PROPOSITION -->
+    <section id="keunggulan">
+        <h2 class="section-title"><span class="lang-id">Keunggulan Utama</span><span class="lang-en">Key Value Propositions</span></h2>
+        <div class="vp-grid">
+            <div class="vp-card">
+                <div class="vp-num">01</div>
+                <h3 class="lang-id">🌿 Bahan Baku Premium Indikasi Geografis</h3>
+                <h3 class="lang-en">🌿 Premium GI Raw Materials</h3>
+                <p class="lang-id">Dibuat dari Lada Hitam Lampung (piperin tinggi, aroma kuat) dan Lada Putih Muntok Bangka Belitung — salah satu lada putih terbaik di dunia. Kualitas premium yang otentik.</p>
+                <p class="lang-en">Made from Lampung Black Pepper (high piperine, strong aroma) and Muntok White Pepper from Bangka Belitung — one of the world's finest white peppers.</p>
+            </div>
+            <div class="vp-card">
+                <div class="vp-num">02</div>
+                <h3 class="lang-id">📦 Kemasan Praktis & Tersertifikasi</h3>
+                <h3 class="lang-en">📦 Practical & Certified</h3>
+                <p class="lang-id">Tersedia dari sachet 4g anti-tumpah hingga bag 25kg untuk industri. Tersertifikasi Halal MUI, BPOM, dan ISO 22000:2018 — memenuhi standar keamanan pangan Jepang yang ketat.</p>
+                <p class="lang-en">Available from anti-spill 4g sachets to 25kg industrial bags. Certified Halal MUI, BPOM, and ISO 22000:2018 — meeting Japan's strict food safety standards.</p>
+            </div>
+            <div class="vp-card">
+                <div class="vp-num">03</div>
+                <h3 class="lang-id">💴 Tarif 0% IJEPA & Kompetitif</h3>
+                <h3 class="lang-en">💴 0% Tariff Advantage</h3>
+                <p class="lang-id">Tarif bea masuk 0% melalui IJEPA memberikan keunggulan harga signifikan dibanding pesaing regional (Vietnam, Malaysia, India) di pasar Jepang.</p>
+                <p class="lang-en">0% import tariff via IJEPA gives a decisive price advantage over competitors from Vietnam, Malaysia, and India in the Japanese market.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section style="background-color: #fff; border-radius: 8px;">
+        <h2 class="section-title"><span class="lang-id">🍽️ Cara Penggunaan Masakan</span><span class="lang-en">🍽️ Recipe Use Cases</span></h2>
+        <div class="use-case-box">
+            <p class="lang-id">Lada hitam dan putih Ladaku hadir dalam dua varian unggulan yang siap menyempurnakan cita rasa masakan Anda, baik untuk kebutuhan rumah tangga, restoran, maupun industri makanan.</p>
+            <p class="lang-en">Ladaku's black and white pepper come in two premium variants, ready to elevate your dishes — for home cooking, restaurants, and food industry.</p>
+            
+            <div class="variant-block">
+                <div class="variant-card black">
+                    <h4>⚫ Black Pepper Ground</h4>
+                    <p><strong><span class="lang-id">Cocok untuk:</span><span class="lang-en">Best for:</span></strong> Steak, Pasta, BBQ, Western Food, Sauce, Meat Marinade, Cream Soup, Roasted Meat.</p>
+                </div>
+                <div class="variant-card white">
+                    <h4>⚪ White Pepper Ground</h4>
+                    <p><strong><span class="lang-id">Cocok untuk:</span><span class="lang-en">Best for:</span></strong> Ramen, Miso Soup, Seafood, Stir-fry, Fried Rice, Hot Pot, White Sauce, Japanese & Asian Cuisine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PRODUCT SHOWCASE -->
+    <section id="produk">
+        <h2 class="section-title"><span class="lang-id">Katalog Varian Produk</span><span class="lang-en">Product Showcase</span></h2>
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="filterProducts('all')"><span class="lang-id">Semua Varian</span><span class="lang-en">All Variants</span></button>
+            <button class="tab-btn" onclick="filterProducts('white')"><span class="lang-id">Lada Putih</span><span class="lang-en">White Pepper</span></button>
+            <button class="tab-btn" onclick="filterProducts('black')"><span class="lang-id">Lada Hitam</span><span class="lang-en">Black Pepper</span></button>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card item-white">
+                <img src="1000120963.jpg" alt="White Pepper Sachet">
+                <h4>White Pepper Sachet 4g / 24g</h4>
+                <p class="lang-id">Kemasan harian anti-tumpah untuk retail harian rumah tangga modern.</p>
+                <p class="lang-en">Hygienic anti-spill daily format for modern retail households.</p>
+            </div>
+            <div class="product-card item-white">
+                <img src="1000120965.jpg" alt="White Pepper Bottle">
+                <h4>White Pepper Bottle 35g</h4>
+                <p class="lang-id">Botol kaca premium sangat ideal untuk segmen retail modern Jepang.</p>
+                <p class="lang-en">Premium retail bottle ideal for Japanese supermarket shelves.</p>
+            </div>
+            <div class="product-card item-white">
+                <img src="1000120967.jpg" alt="White Pepper Pouch 100g">
+                <h4>White Pepper Pouch 100g / 250g</h4>
+                <p class="lang-id">Kemasan isi ulang komersial untuk industri katering dan HORECA.</p>
+                <p class="lang-en">Commercial stand pouch for kitchen refills and HORECA sector.</p>
+            </div>
+            <div class="product-card item-white">
+                <img src="1000120968.jpg" alt="White Pepper Bag 25kg">
+                <h4>White Pepper Bulk Bag 25kg</h4>
+                <p class="lang-id">Kebutuhan rantai pasok industri manufaktur makanan olahan & bumbu.</p>
+                <p class="lang-en">Heavy industrial size built for large food processing factories.</p>
+            </div>
+            <div class="product-card item-black">
+                <img src="1000120964.jpg" alt="Black Pepper Bottle">
+                <h4>Black Pepper Bottle 35g</h4>
+                <p class="lang-id">Lada hitam aromatik kuat untuk bumbu meja steak dan menu Barat.</p>
+                <p class="lang-en">Bold aromatic table shaker best for Western dishes and steaks.</p>
+            </div>
+            <div class="product-card item-black">
+                <img src="1000120966.jpg" alt="Black Pepper Pouch 100g">
+                <h4>Black Pepper Pouch 100g / 250g</h4>
+                <p class="lang-id">Ukuran ekonomis pasokan dapur kuliner restoran ramen & steak.</p>
+                <p class="lang-en">Economic volume packet tailored for commercial restaurant chefs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATA SPECIFICATION & TABLES -->
+    <section>
+    <h2 class="section-title"><span class="lang-id">Spesifikasi & Informasi Ekspor</span><span class="lang-en">Export Specifications & MOQs</span></h2>
+        
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th><span class="lang-id">Parameter Utama</span><span class="lang-en">Key Parameter</span></th>
+                        <th><span class="lang-id">Detail Ketentuan Resmi</span><span class="lang-en">Official Specifications</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>HS Code</strong></td><td>090412 — Pepper of the genus Piper, crushed or ground</td></tr>
+                    <tr><td><strong>Lead Time</strong></td><td>30–45 Days from confirmed order structure</td></tr>
+                    <tr><td><strong>Incoterms</strong></td><td>FOB Tanjung Perak, Surabaya, Indonesia</td></tr>
+                    <tr><td><strong>Japanese Labeling</strong></td><td>Available & Compliant with Food Sanitation Act & MHLW regulations</td></tr>
+                    <tr><td><strong>Manufacturer</strong></td><td>PT Motasa Indonesia, Mojokerto, East Java</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="color: var(--hijau-tua); margin: 25px 0 15px 0;"><span class="lang-id">Ketentuan Minimum Order (MOQ)</span><span class="lang-en">Minimum Order Quantity (MOQ) Details</span></h3>
+        <ul style="padding-left: 20px; font-size: 0.95rem;">
+            <li><strong>Sachet 4g/24g:</strong> 1 Carton/variant (1,000 / 500 pcs). Sample 100 pcs available.</li>
+            <li><strong>Bottle 35g:</strong> 500 Bottles minimum. Sample 100 units available.</li>
+            <li><strong>Pouch 100g/250g:</strong> 500 / 300 Pouches minimum.</li>
+            <li><strong>Bulk Industrial Bag 25kg:</strong> 1 FCL Container (20 Tons). Trial run 100 bags negotiable.</li>
+        </ul>
+    </section>
+
+    <!-- CERTIFICATIONS BADGES AREA -->
+    <section class="cert-section" style="max-width: 100%;">
+        <h2 class="section-title"><span class="lang-id">Sertifikasi & Standar Kualitas</span><span class="lang-en">Certifications & Quality Standards</span></h2>
+        <div class="cert-row">
+            <div class="cert-item">
+                <div class="cert-icon-placeholder"><i class="fa-solid fa-award"></i></div>
+                <h4>ISO 22000:2018</h4>
+                <p style="font-size: 0.8rem; color:#666;">Food Safety Management System (SAI Global)</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon-placeholder"><i class="fa-solid fa-moon"></i></div>
+                <h4>Halal MUI</h4>
+                <p style="font-size: 0.8rem; color:#666;">Internationally recognized Islamic Halal Compliance</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon-placeholder"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>BPOM RI</h4>
+                <p style="font-size: 0.8rem; color:#666;">National Indonesian Food Safety Clearances</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon-placeholder"><i class="fa-solid fa-leaf"></i></div>
+                <h4>ISO 14001</h4>
+                <p style="font-size: 0.8rem; color:#666;">Sustainable Environmental Factory System</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET MARKET & EXPORT EXPERIENCE -->
+    <section id="pasar">
+        <h2 class="section-title"><span class="lang-id">Target Pasar & Rekam Jejak</span><span class="lang-en">Target Market & Track Record</span></h2>
+        <div class="track-grid">
+            <div class="track-box">
+                <h3 style="color:var(--hijau-tua); margin-bottom:10px;"><span class="lang-id">Jaringan Global</span><span class="lang-en">Global Logistics Experience</span></h3>
+                <p class="lang-id">PT Motasa Indonesia memiliki rekam jejak ekspor internasional yang terbukti memasok ke berbagai negara mitra:</p>
+                <p class="lang-en">PT Motasa Indonesia maintains successful regular commercial shipments with multiple global countries:</p>
+                <div class="flags-container">
+                    <span class="flag-tag">🇸🇬 Singapore</span> <span class="flag-tag">🇲🇾 Malaysia</span> 
+                    <span class="flag-tag">🇧🇳 Brunei</span> <span class="flag-tag">🇭🇰 Hong Kong</span> 
+                    <span class="flag-tag">🇹🇼 Taiwan</span> <span class="flag-tag">🇲🇴 Macau</span> 
+                    <span class="flag-tag">🇳🇱 Netherlands</span> <span class="flag-tag">🇸🇦 Saudi Arabia</span>
+                    <span class="flag-tag" style="background-color: var(--emas); color: var(--hijau-tua)">🇯🇵 Japan (Expanding)</span>
+                </div>
+            </div>
+            <div class="track-box">
+                <h3 style="color:var(--hijau-tua); margin-bottom:10px;"><span class="lang-id">Estimasi Harga Retail Jepang</span><span class="lang-en">Estimated Japan Retail Pricing</span></h3>
+                <p style="font-size: 0.85rem; margin-bottom: 10px; color:#55px">Sachet 4g: ¥80-120 | Botol 35g: ¥900-1,200 | Pouch 100g: ¥1,300-1,700 | Bulk 25kg: ¥46,500.</p>
+                <p class="lang-id" style="font-size: 0.85rem; color:#666;">*Harga FOB resmi didiskusikan kembali melalui korespondensi tim ekspor sesuai volume penawaran bervolume besar.</p>
+                <p class="lang-en" style="font-size: 0.85rem; color:#666;">*Official B2B bulk pricing structure remains negotiable depending on the required logistics order volumes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INQUIRY FORM SECTION -->
+      <section id="kontak" style="background-color: var(--krem-tua); border-radius: 8px; padding: 5px 20px 40px 20px;">
+        <h2 class="section-title" style="margin-top: 40px;"><span class="lang-id">Mulai Kemitraan Kargo Anda</span><span class="lang-en">Start Your Cargo Partnership</span></h2>
+        <div class="contact-area">
+            <div class="contact-info">
+                <h3 style="color:var(--hijau-tua); margin-bottom:20px;"><span class="lang-id">Hubungi Meja Ekspor Resmi</span><span class="lang-en">Contact Official Export Desk</span></h3>
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i> export@motasaindonesia.com</li>
+                    <li><i class="fa-solid fa-phone"></i> +62 321 371 5508 (Factory - Mojokerto)</li>
+                    <li><i class="fa-solid fa-globe"></i> www.motasaindonesia.com</li>
+                </ul>
+                <p class="lang-id" style="margin-top:20px; font-size:0.9rem; color:#666">Tim support penanganan perdagangan Jepang kami siap memproses draf katalog serta penawaran komersial FOB Anda dalam 1-2 hari kerja.</p>
+                <p class="lang-en" style="margin-top:20px; font-size:0.9rem; color:#666">Our specialized Japanese trade support desks remain active to evaluate your official commercial quotation requests within 1-2 business days.</p>
+            </div>
+            
+            <form onsubmit="event.preventDefault(); alert('Inquiry Simulation Sent / Simulasi Terkirim!');">
+                <div class="form-group">
+                    <label><span class="lang-id">Nama Lengkap / Perusahaan</span><span class="lang-en">Full Name / Company</span></label>
+                    <input type="text" required placeholder="e.g. Tokyo Foods Co., Ltd.">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required placeholder="buyer@company.co.jp">
+                </div>
+                <div class="form-group">
+                    <label><span class="lang-id">Pilih Jenis Varian Lada</span><span class="lang-en">Select Pepper Variant</span></label>
+                    <select>
+                        <option>White Pepper Ground</option>
+                        <option>Black Pepper Ground</option>
+                        <option>Both Varian (White & Black)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><span class="lang-id">Pilihan Ukuran Kemasan</span><span class="lang-en">Select Packaging Size</span></label>
+                    <select>
+                        <option>Sachet 4g / 24g</option>
+                        <option>Bottle 35g</option>
+                        <option>Pouch 100g / 250g</option>
+                        <option>Bulk Bag 25kg (Industrial)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><span class="lang-id">Catatan Kebutuhan Ekspor</span><span class="lang-en">Export Requirement Details</span></label>
+                    <textarea rows="4" placeholder="Volume estimate, port questions, sample requirements..."></textarea>
+                </div>
+                <button type="submit" class="form-submit"><span class="lang-id">Kirim Permintaan Ekspor</span><span class="lang-en">Submit Trade Inquiry</span></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>PT Motasa Indonesia – Ladaku Brand | export@motasaindonesia.com</p>
+        <p style="font-size:0.8rem; margin-top:5px; color: var(--emas);">
+            <span class="lang-id">🌏 Dari kepulauan rempah Indonesia ke dapur Anda di Jepang</span>
+            <span class="lang-en">🌏 From Indonesia's spice islands to your kitchen in Japan</span>
+        </p>
+        <p style="font-size: 0.75rem; margin-top: 15px; opacity: 0.7;">&copy; 2026 PT Motasa Indonesia. All Rights Reserved. (Kelompok 1 Assignment Proyek)</p>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT FOR SWITCHING & FILTERING -->
+    <script>
+        // Language Switcher Function logic
+        function toggleLanguage() {
+            document.body.classList.toggle('en-active');
+        }
+
+        // Product Catalog Filter Feature logic
+        function filterProducts(category) {
+            const whiteItems = document.querySelectorAll('.item-white');
+            const blackItems = document.querySelectorAll('.item-black');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            // Update active button state styling
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if(category === 'all') {
+                whiteItems.forEach(el => el.style.display = 'block');
+                blackItems.forEach(el => el.style.display = 'block');
+            } else if (category === 'white') {
+                whiteItems.forEach(el => el.style.display = 'block');
+                blackItems.forEach(el => el.style.display = 'none');
+            } else if (category === 'black') {
+                whiteItems.forEach(el => el.style.display = 'none');
+                blackItems.forEach(el => el.style.display = 'block');
+            }
+        }
+    </script>
+</body>
+</html>
